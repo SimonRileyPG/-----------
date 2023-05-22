@@ -8,7 +8,8 @@ function Profile() {
     <div>
         <Name name="Ali" />
         <Email email="ali.celt@bk.ru" />
-        <Address adres="Xirdalan" />
+        <Address adre
+        s="Xirdalan" />
         <Personalnfo info="14 years old" />
     </div>
   )

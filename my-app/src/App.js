@@ -2,22 +2,26 @@ import React from 'react'
 import Profile from './Profile'
 import { useState , useEffect} from 'react';
 function App() {
-  const [dice,setDice] = useState(1)
-  const [dice2,setDice2] = useState(1)
-  function cl(){
-    const newNum= [Math.ceil(Math.random() * 6)];
-    const newN2um= [Math.ceil(Math.random() * 6)];
-    setDice2(newN2um)
-    setDice(newNum)
+  const [buttonAdd, setButtonAdd] = useState(0);
+  const [buttonColor, setButtonColor] = useState('red');
+  function fear(){
+    if(buttonAdd < 10){
+      const colors = ['red','green','blue']
+      const randomColor=colors[Math.floor(Math.random()*colors.length)]
+    setButtonAdd(buttonAdd + 1);
+    setButtonColor(randomColor)
+    }
   }
-  
+  function fe1ar(){
+    setButtonAdd(buttonAdd - 1);
+  }
   return (
-    <div>
-      <div>{dice}</div>
-      <div>{dice2}</div>
-      <button onClick={cl}></button>
+    <div style={{backgroundColor: buttonColor}}>
+      <button onClick={fear}>+</button>
+      <p>{buttonAdd}</p>
+      <button onClick={fe1ar}>-</button>
     </div>
-  );
+  )
 }
 
 
